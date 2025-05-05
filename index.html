@@ -2,21 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>uClickWeShip</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>uClick Slot Game</title>
+  <link rel="stylesheet" href="style.css"/>
   <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>uClickWeShip</h1>
-    <p>Click to earn. Pull to reveal your Grown Folk Bill.</p>
+  <div class="slot-container">
+    <h1>uClick Slot</h1>
+    <p>Click to spin the reels. Match symbols to unlock your Grown Folk reward.</p>
 
-    <button id="connectWallet">Connect Wallet</button>
-    <button id="pullButton">Pull</button>
+    <div class="reels">
+      <div class="reel" id="reel1">?</div>
+      <div class="reel" id="reel2">?</div>
+      <div class="reel" id="reel3">?</div>
+    </div>
 
+    <button id="pullButton">PULL</button>
     <div id="result"></div>
+    <div id="mintButton" style="display:none;">
+      <button onclick="mintNFT()">Mint Your Pull</button>
+    </div>
+
     <div id="walletDisplay">Not connected</div>
+    <button id="connectWallet">Connect Wallet</button>
   </div>
 
   <script src="script.js"></script>
