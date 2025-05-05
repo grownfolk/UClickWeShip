@@ -3,31 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>uClick Slot Game</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <title>uClick Slot</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f4f4f4;
+      padding: 30px;
+      text-align: center;
+    }
+    .slot-container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .slot-reels {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .slot-box {
+      width: 100px;
+      height: 100px;
+      background: #eee;
+      border: 2px solid #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+    }
+    .slot-box img {
+      width: 80px;
+      height: 80px;
+    }
+    .pull-button, .wallet-button, .claim-button {
+      background-color: #8B0000;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+      margin: 10px 5px;
+    }
+    .wallet-button {
+      background-color: #003366;
+    }
+    .score {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
+
   <div class="slot-container">
-    <h1>uClick Slot</h1>
-    <p>Click to spin the reels. Match symbols to unlock your Grown Folk reward.</p>
+    <h2>uClick Slot</h2>
+    <p>Spin the reels and win GrownFolk rewards.</p>
 
-    <div class="reels">
-      <div class="reel" id="reel1">?</div>
-      <div class="reel" id="reel2">?</div>
-      <div class="reel" id="reel3">?</div>
+    <button class="wallet-button" onclick="connectWallet()">Connect Wallet</button>
+
+    <div class="slot-reels">
+      <div class="slot-box" id="slot1"></div>
+      <div class="slot-box" id="slot2"></div>
+      <div class="slot-box" id="slot3"></div>
     </div>
 
-    <button id="pullButton">PULL</button>
-    <div id="result"></div>
-    <div id="mintButton" style="display:none;">
-      <button onclick="mintNFT()">Mint Your Pull</button>
-    </div>
+    <button class="pull-button" onclick="pullSlot()">PULL</button>
 
-    <div id="walletDisplay">Not connected</div>
-    <button id="connectWallet">Connect Wallet</button>
+    <div class="score" id="score">Score: 0</div>
+    <p id="resultText"></p>
+
+    <button class="claim-button" style="display:none;" id="claimBtn">Claim Reward</button>
   </div>
 
-  <script src="script.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
