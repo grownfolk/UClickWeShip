@@ -1,41 +1,29 @@
-const symbols = ["GF", "YF", "FLAG", "?", "CAP", "LOCK"];
-let provider, signer;
-
-function spinReels() {
-  const r1 = getRandomSymbol();
-  const r2 = getRandomSymbol();
-  const r3 = getRandomSymbol();
-
-  document.getElementById('reel1').textContent = r1;
-  document.getElementById('reel2').textContent = r2;
-  document.getElementById('reel3').textContent = r3;
-
-  const match = (r1 === r2 && r2 === r3);
-  const resultText = match ? `JACKPOT! 3x ${r1}` : `Pulled: ${r1}, ${r2}, ${r3}`;
-  document.getElementById('result').textContent = resultText;
-
-  document.getElementById('mintButton').style.display = match ? 'block' : 'none';
-}
+const symbols = [
+  { name: "UClick", image: "assets/uclick.png" },
+  { name: "YoungFolk", image: "assets/youngfolk.png" },
+  { name: "GrownFolkMap", image: "assets/gfmap.png" },
+  { name: "GrownFolkNeon", image: "assets/gfneon.png" },
+  { name: "USAFlag", image: "assets/usaflag.png" },
+  { name: "GoldSeal", image: "assets/goldseal.png" }
+];
 
 function getRandomSymbol() {
-  const idx = Math.floor(Math.random() * symbols.length);
-  return symbols[idx];
+  return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-document.getElementById('pullButton').addEventListener('click', spinReels);
+function pullSlot() {
+  const slot1 = getRandomSymbol();
+  const slot2 = getRandomSymbol();
+  const slot3 = getRandomSymbol();
 
-document.getElementById('connectWallet').addEventListener('click', async () => {
-  if (window.ethereum) {
-    provider = new ethers.providers.Web3Provider(window.ethereum);
-    await provider.send("eth_requestAccounts", []);
-    signer = provider.getSigner();
-    const address = await signer.getAddress();
-    document.getElementById('walletDisplay').textContent = `Connected: ${address}`;
+  document.getElementById("slot1").innerHTML = `<img src="${slot1.image}" alt="${slot1.name}" width="100" height="100"/>`;
+  document.getElementById("slot2").innerHTML = `<img src="${slot2.image}" alt="${slot2.name}" width="100" height="100"/>`;
+  document.getElementById("slot3").innerHTML = `<img src="${slot3.image}" alt="${slot3.name}" width="100" height="100"/>`;
+
+  const resultText = document.getElementById("resultText");
+  if (slot1.name === slot2.name && slot2.name === slot3.name) {
+    resultText.innerText = `JACKPOT! 3x ${slot1.name}`;
   } else {
-    alert("Please install MetaMask.");
+    resultText.innerText = `Pulled: ${slot1.name}, ${slot2.name}, ${slot3.name}`;
   }
-});
-
-function mintNFT() {
-  alert("Minting logic will go here.");
 }
