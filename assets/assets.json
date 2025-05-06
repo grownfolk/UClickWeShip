@@ -1,0 +1,38 @@
+[
+  {
+    "name": "GF Coin",
+    "symbol": "GFC",
+    "description": "Official coin of the Grown Folk network.",
+    "image": "gf_asset_1.png"
+  },
+  {
+    "name": "GF Dollar",
+    "symbol": "GF$",
+    "description": "Prize currency redeemable for verified members.",
+    "image": "gf_asset_2.png"
+  },
+  {
+    "name": "GF Badge",
+    "symbol": "GF🪪",
+    "description": "GrownFolk ID badge for verified profile holders.",
+    "image": "gf_asset_3.png"
+  },
+  {
+    "name": "YF Coin",
+    "symbol": "YFC",
+    "description": "YoungFolk reward token in the Grown Folk network.",
+    "image": "gf_asset_4.png"
+  },
+  {
+    "name": "GF Flag",
+    "symbol": "GFUSA",
+    "description": "United community flag for verified GrownFolk.",
+    "image": "gf_asset_5.png"
+  },
+  {
+    "name": "GrownFolk Map",
+    "symbol": "GFMap",
+    "description": "Symbol of the national GrownFolk footprint.",
+    "image": "gf_asset_6.png"
+  }
+]
