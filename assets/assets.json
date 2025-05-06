@@ -1,13 +1,13 @@
 [
   {
     "name": "GF Coin",
-    "symbol": "GFC",
+    "symbol": "GF🪙",
     "description": "Official coin of the Grown Folk network.",
     "image": "gf_asset_1.png"
   },
   {
     "name": "GF Dollar",
-    "symbol": "GF$",
+    "symbol": "GF💵",
     "description": "Prize currency redeemable for verified members.",
     "image": "gf_asset_2.png"
   },
@@ -18,9 +18,9 @@
     "image": "gf_asset_3.png"
   },
   {
-    "name": "YF Coin",
-    "symbol": "YFC",
-    "description": "YoungFolk reward token in the Grown Folk network.",
+    "name": "GrownFolk$",
+    "symbol": "GF$",
+    "description": "Redeemable coin earned by cashing in GrownFolk$ bills.",
     "image": "gf_asset_4.png"
   },
   {
