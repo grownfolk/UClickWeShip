@@ -16,11 +16,11 @@
     "symbol": "GF🪪",
     "description": "GrownFolk ID badge for verified profile holders.",
     "image": "gf_asset_3.png"
-  },
+  }
   {
     "name": "GrownFolk$",
     "symbol": "GF$",
-    "description": "Redeemable coin earned by cashing in GrownFolk$ bills.",
+    "description": "Redeemable coin earned by cashing in GF Dollar.",j
     "image": "gf_asset_4.png"
   },
   {
